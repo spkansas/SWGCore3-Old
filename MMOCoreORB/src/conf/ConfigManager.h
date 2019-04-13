@@ -96,6 +96,8 @@ namespace conf {
 		String inactiveAccountTitle;
 		String inactiveAccountText;
 
+		bool characterBuilderEnabled = true;
+
 	public:
 		ConfigManager();
 
@@ -147,6 +149,10 @@ namespace conf {
 
 		inline bool getPvpMode() const {
 			return pvpMode;
+		}
+
+		inline void setPvpMode(bool val) {
+			pvpMode = val;
 		}
 
 		inline const String& getORBNamingDirectoryAddress() const {
@@ -380,6 +386,10 @@ namespace conf {
 		inline const String& getInactiveAccountText() const {
 			return inactiveAccountText;
 		}
+
+		inline bool getCharacterBuilderEnabled() const {
+			return characterBuilderEnabled;
+		}
 	};
 }
 
@@ -387,6 +397,3 @@ namespace conf {
 using namespace conf;
 
 #endif // #ifndef CONFIGMANAGER_H_
-
-
-

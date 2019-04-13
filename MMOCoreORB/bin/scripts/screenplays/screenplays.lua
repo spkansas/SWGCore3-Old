@@ -672,3 +672,5 @@ includeFile("tests/tests.lua")
 --Custom Screenplays
 includeFile("custom_screenplays/screenplays.lua")
 
+-- Server Event Automation
+includeFile("events/ServerEventAutomation.lua")
