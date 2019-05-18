@@ -145,7 +145,7 @@ void VehicleControlDeviceImplementation::spawnObject(CreatureObject* player) {
 	Reference<VehicleDecayTask*> decayTask = new VehicleDecayTask(controlledObject);
 	decayTask->execute();
 
-	if (vehicle != NULL && controlledObject->getServerObjectCRC() == 0x32F87A54) // Jetpack
+	if (vehicle != NULL && (controlledObject->getServerObjectCRC() == 0x32F87A54 || controlledObject->getServerObjectCRC() == 0x3A19A20D || controlledObject->getServerObjectCRC() == 0x5C3FA920 )) // Jetpack
 	{
 		controlledObject->setCustomizationVariable("/private/index_hover_height", 40, true); // Illusion of flying.
 		player->executeObjectControllerAction(STRING_HASHCODE("mount"), controlledObject->getObjectID(), ""); // Auto mount.

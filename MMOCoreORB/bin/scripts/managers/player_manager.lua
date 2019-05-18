@@ -64,8 +64,8 @@ globalExpMultiplier = 1.0
 baseStoredCreaturePets = 2
 baseStoredFactionPets = 3
 baseStoredDroids = 5
-baseStoredVehicles = 3
-baseStoredShips = 3
+baseStoredVehicles = 15
+baseStoredShips = 10
 
 -----------------------------------
 --VETERAN REWARDS CONFIG
