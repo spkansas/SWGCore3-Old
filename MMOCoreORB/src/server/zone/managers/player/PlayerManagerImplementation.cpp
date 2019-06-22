@@ -371,7 +371,7 @@ void PlayerManagerImplementation::loadNameMap() {
 		}
 
 	} catch (Exception& e) {
-		error(e.getMessage());
+		fatal(e.getMessage());
 	}
 
 	StringBuffer msg;
@@ -460,7 +460,14 @@ void PlayerManagerImplementation::writePlayerLog(CreatureObject* creature, Playe
 		logEntry["worldPositionX"] = (int)creature->getWorldPositionX();
 		logEntry["worldPositionZ"] = (int)creature->getWorldPositionZ();
 		logEntry["worldPositionY"] = (int)creature->getWorldPositionY();
-		logEntry["zone"] = creature->getZone()->getZoneName();
+
+		Zone* zone = creature->getZone();
+
+		if (zone == nullptr)
+			logEntry["zone"] = "null";
+		else
+			logEntry["zone"] = zone->getZoneName();
+
 	}
 
 	writePlayerLogEntry(logEntry);
@@ -2520,7 +2527,7 @@ int PlayerManagerImplementation::notifyObserverEvent(uint32 eventType, Observabl
 
 		// Check POSTURECHANGED disrupting Logout...
 		Reference<LogoutTask*> logoutTask = creature->getPendingTask("logout").castTo<LogoutTask*>();
-		if (logoutTask != NULL) {
+		if (logoutTask != NULL && !creature->isSitting()) {
 			logoutTask->cancelLogout();
 		}
 
