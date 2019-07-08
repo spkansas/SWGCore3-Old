@@ -99,6 +99,8 @@ void ConfigManager::clearConfigData() {
 	cache_ProgressMonitors = false;
 	cache_UnloadContainers = false;
 	cache_UseMetrics = false;
+	cache_SessionStatsSeconds = 3600;
+	cache_OnlineLogSize = 100000000;
 }
 
 void ConfigManager::cacheHotItems() {
@@ -107,6 +109,8 @@ void ConfigManager::cacheHotItems() {
 	cache_ProgressMonitors = getBool("Core3.ProgressMonitors", false);
 	cache_UnloadContainers = getBool("Core3.UnloadContainers", true);
 	cache_UseMetrics = getBool("Core3.UseMetrics", false);
+	cache_SessionStatsSeconds = getInt("Core3.SessionStatsSeconds", 3600);
+	cache_OnlineLogSize = getInt("Core3.OnlineLogSize", 100000000);
 }
 
 void ConfigManager::dumpConfig(bool includeSecure) {

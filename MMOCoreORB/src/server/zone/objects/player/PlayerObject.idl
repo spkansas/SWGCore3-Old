@@ -74,6 +74,8 @@ class PlayerObject extends IntangibleObject {
 
 	protected transient Account account;
 
+	protected transient int countMaxCov;
+
 	@dereferenced
 	protected Time reactionFineTimestamp; // Timestamp of when player was given a fine
 
@@ -279,6 +281,13 @@ class PlayerObject extends IntangibleObject {
 
 	protected unsigned long miliSecsPlayed;
 	protected unsigned long miliSecsSession;
+	protected unsigned long sessionStatsMiliSecs;
+	protected transient long sessionStatsLastCredits;
+	protected transient int sessionStatsLastSkillPoints;
+	protected transient unsigned long sessionStatsActivityXP;
+	protected transient unsigned long sessionStatsActivityMovement;
+	protected transient unsigned long sessionStatsTotalMovement;
+	protected transient string sessionStatsIPAddress;
 
 	public static final int LFG = 1;
 	public static final int NEWBIEHELPER = 2;
@@ -404,6 +413,14 @@ class PlayerObject extends IntangibleObject {
 
 	public int getLogLevel() {
 		return playerLogLevel;
+	}
+
+	public int getCountMaxCov() {
+		return countMaxCov;
+	}
+
+	public void setCountMaxCov(int newMaxCov) {
+		countMaxCov = newMaxCov;
 	}
 
     public native void info(final string msg, boolean force = false);
@@ -1190,6 +1207,10 @@ class PlayerObject extends IntangibleObject {
 	 */
 	public native void notifyOffline();
 
+	public native void resetSessionStats(boolean isSessionStart);
+	public native void incrementSessionMovement(float moveDelta);
+	public native void logSessionStats(boolean isSessionEnd);
+
 	public void setBadge(unsigned int badge) {
 		badges.setBadge(badge);
 	}
@@ -1910,6 +1931,10 @@ class PlayerObject extends IntangibleObject {
 	@read
 	public unsigned long getSessionMiliSecs() {
 		return miliSecsSession;
+	}
+
+	public unsigned long getSessionTotalMovement() {
+		return sessionStatsTotalMovement;
 	}
 
 	@dirty

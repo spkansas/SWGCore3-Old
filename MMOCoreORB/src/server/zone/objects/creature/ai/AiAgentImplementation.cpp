@@ -2734,7 +2734,10 @@ bool AiAgentImplementation::sendConversationStartTo(SceneObject* player) {
 		return false;
 
 	//Face player.
-	faceObject(player);
+	if (level != 2112) {
+		faceObject(player);
+	}
+
 
 	PatrolPoint current(coordinates.getPosition(), getParent().get().castTo<CellObject*>());
 
