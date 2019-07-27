@@ -15,7 +15,7 @@
 DroidHarvestModuleDataComponent::DroidHarvestModuleDataComponent() {
 	harvestBonus = 0;
 	interest = 0; // random
-	active = false;
+	active = true;  // Autoharvest ON by default
 	setLoggingName("DroidHarvestModule");
 	harvestTargets.removeAll(0,10);
 }
