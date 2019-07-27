@@ -37,6 +37,8 @@
 #include "server/zone/objects/creature/commands/effect/DotEffect.h"
 #include "server/zone/objects/creature/commands/effect/CommandEffect.h"
 
+#include "server/zone/objects/creature/commands/AreaTauntCommand.h"
+
 #include "server/zone/objects/creature/commands/pet/PetAttackCommand.h"
 #include "server/zone/objects/creature/commands/pet/PetEmoteCommand.h"
 #include "server/zone/objects/creature/commands/pet/PetFeedCommand.h"
@@ -850,4 +852,5 @@ void CommandConfigManager::registerCommands() {
 	commandFactory.registerCommand<PetPatrolCommand>(String("petPatrol").toLowerCase());
 	commandFactory.registerCommand<PetClearPatrolPointsCommand>(String("petClearPatrolPoints").toLowerCase());
 	commandFactory.registerCommand<PetGetPatrolPointCommand>(String("petGetPatrolPoint").toLowerCase());
+	commandFactory.registerCommand<AreaTauntCommand>(String("areataunt").toLowerCase());
 }
