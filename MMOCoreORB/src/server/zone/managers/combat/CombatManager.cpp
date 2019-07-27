@@ -337,6 +337,14 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 }
 
 int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* weapon, CreatureObject* defender, const CreatureAttackData& data, bool* shouldGcwTef, bool* shouldBhTef) {
+	//ensures no exploited sabers
+	if (attacker->isPlayerCreature() && weapon->isJediWeapon() && weapon->getForceCost() <= 4) {
+  		Locker locker(weapon);
+ 		weapon->setForceCost(5);
+  		info(attacker->getFirstName() + " was found using a bugged weapon!!", true);
+        attacker->sendSystemMessage("Your weapon FC was found to be to low, it has been updated automatically to FC5");
+	}
+
 	if (defender->isEntertaining())
 		defender->stopEntertaining();
 
