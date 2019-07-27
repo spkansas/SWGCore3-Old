@@ -44,6 +44,7 @@
 
 --Children folder includes
 includeFile("installation/generators/base/serverobjects.lua")
+includeFile("installation/generators/power_generator_fusion_style_elite.lua")
 
 -- Server Objects
 includeFile("installation/generators/power_generator_fusion_style_1.lua")

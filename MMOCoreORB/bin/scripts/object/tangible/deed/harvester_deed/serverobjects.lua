@@ -44,6 +44,7 @@
 
 --Children folder includes
 
+includeFile("tangible/deed/harvester_deed/harvester_flora_deed_elite.lua")
 -- Server Objects
 includeFile("tangible/deed/harvester_deed/harvester_creature_deed.lua")
 includeFile("tangible/deed/harvester_deed/harvester_flora_deed.lua")
@@ -61,3 +62,7 @@ includeFile("tangible/deed/harvester_deed/harvester_moisture_deed_medium.lua")
 includeFile("tangible/deed/harvester_deed/harvester_ore_heavy_deed.lua")
 includeFile("tangible/deed/harvester_deed/harvester_ore_s1_deed.lua")
 includeFile("tangible/deed/harvester_deed/harvester_ore_s2_deed.lua")
+--New
+includeFile("tangible/deed/harvester_deed/harvester_gas_deed_elite.lua")
+includeFile("tangible/deed/harvester_deed/harvester_liquid_deed_elite.lua")
+includeFile("tangible/deed/harvester_deed/harvester_ore_elite_deed.lua")
