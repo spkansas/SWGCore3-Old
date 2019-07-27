@@ -391,6 +391,11 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 		break;}
 	case RICOCHET:
 		doLightsaberBlock(attacker, weapon, defender, damage);
+		if (System::random(100) < 10 && !defender->hasState(CreatureState::PEACE) && !attacker->isPlayerCreature()){
+			defender->showFlyText("combat_effects", "reflect", 0, 255, 0);
+			int poolsToDamageReflect = calculatePoolsToDamage(data.getPoolsToDamage());
+			damage = applyDamage(defender, weapon, attacker, damage * .3, damageMultiplier, poolsToDamageReflect, hitLocation, data);
+		}
 		damageMultiplier = 0.0f;
 		break;
 	default:
@@ -489,7 +494,7 @@ int CombatManager::doTargetCombatAction(TangibleObject* attacker, WeaponObject* 
 		doCounterAttack(attacker, weapon, defenderObject, damage);
 		if (!defenderObject->hasState(CreatureState::PEACE))
 			defenderObject->executeObjectControllerAction(STRING_HASHCODE("attack"), attacker->getObjectID(), "");
-		damageMultiplier = 0.0f;
+		damageMultiplier = 0.50f;
 		break;
 	case RICOCHET:
 		doLightsaberBlock(attacker, weapon, defenderObject, damage);
