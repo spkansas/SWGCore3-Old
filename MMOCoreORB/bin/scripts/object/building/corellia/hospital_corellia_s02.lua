@@ -43,9 +43,10 @@
 
 object_building_corellia_hospital_corellia_s02 = object_building_corellia_shared_hospital_corellia_s02:new {
 	skillMods = {
-		{"private_medical_rating", 100},
-		{"private_med_wound_health", 100},
-		{"private_med_wound_action", 100},
+		{"private_medical_rating", 120},
+		{"private_med_wound_health", 110},
+		{"private_med_wound_action", 110},
+		{"private_med_wound_mind",100},
 		{"private_safe_logout", 1}
 	},
 
