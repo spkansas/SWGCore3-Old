@@ -434,7 +434,7 @@ void PlayerObjectImplementation::notifySceneReady() {
 		ChatRoom* room = chatManager->getChatRoom(chatRooms.get(i));
 		if (room != nullptr) {
 			int roomType = room->getChatRoomType();
-			if (roomType == ChatRoom::PLANET || roomType == ChatRoom::GUILD)
+			if (roomType == ChatRoom::PLANET || roomType == ChatRoom::GUILD || roomType == ChatRoom::PVP)
 				continue; //Planet and Guild are handled above.
 
 			room->sendTo(creature);
@@ -1225,7 +1225,6 @@ void PlayerObjectImplementation::addIgnore(const String& name, bool notifyClient
 	}
 }
 
-
 void PlayerObjectImplementation::removeIgnore(const String& name, bool notifyClient) {
 	String nameLower = name.toLowerCase();
 	ManagedReference<SceneObject*> parent = getParent().get();
@@ -1357,6 +1356,9 @@ void PlayerObjectImplementation::notifyOnline() {
 		activateForcePowerRegen();
 
 	schedulePvpTefRemovalTask();
+
+	//playerCreature->sendExecuteConsoleCommand("/chatRoom join SWG.SWGRemastered.General");
+	//playerCreature->sendExecuteConsoleCommand("/chatRoom join SWG.SWGRemastered.PvP");
 
 	MissionManager* missionManager = zoneServer->getMissionManager();
 
@@ -2232,9 +2234,9 @@ void PlayerObjectImplementation::setForcePower(int fp, bool notifyClient) {
 	if(fp == getForcePower())
 		return;
 
-	// Set forcepower back to 0 incase player goes below	
+	// Set forcepower back to 0 incase player goes below
 	if (fp < 0)
-		fp = 0;	
+		fp = 0;
 
 	// Set force back to max incase player goes over
 	if (fp > getForcePowerMax())
@@ -2246,7 +2248,7 @@ void PlayerObjectImplementation::setForcePower(int fp, bool notifyClient) {
 		activateForcePowerRegen();
 	}
 
-	forcePower = fp;			
+	forcePower = fp;
 
 	if (notifyClient == true){
 		// Update the force power bar.
@@ -2317,13 +2319,15 @@ void PlayerObjectImplementation::updateLastPvpCombatActionTimestamp(bool updateG
 		lastBhPvpCombatActionTimestamp.updateToCurrentTime();
 		lastBhPvpCombatActionTimestamp.addMiliTime(FactionManager::TEFTIMER);
 
-		if (!alreadyHasBhTef)
+		if (!alreadyHasBhTef) {
 			parent->notifyObservers(ObserverEventType::BHTEFCHANGED);
+		}
 	}
 
 	if (updateGcwAction) {
 		lastGcwPvpCombatActionTimestamp.updateToCurrentTime();
 		lastGcwPvpCombatActionTimestamp.addMiliTime(FactionManager::TEFTIMER);
+
 	}
 
 	schedulePvpTefRemovalTask();
@@ -2378,6 +2382,7 @@ void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow,
 		if (hasPvpTef()) {
 			auto gcwTefMs = getLastGcwPvpCombatActionTimestamp().miliDifference();
 			auto bhTefMs = getLastBhPvpCombatActionTimestamp().miliDifference();
+
 			pvpTefTask->schedule(llabs(gcwTefMs < bhTefMs ? gcwTefMs : bhTefMs));
 		} else {
 			pvpTefTask->execute();
