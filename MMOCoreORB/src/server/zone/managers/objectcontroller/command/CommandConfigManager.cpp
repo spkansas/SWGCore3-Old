@@ -62,6 +62,9 @@
 #include "server/zone/objects/creature/commands/pet/PetClearPatrolPointsCommand.h"
 #include "server/zone/objects/creature/commands/pet/PetGetPatrolPointCommand.h"
 
+#include "server/zone/objects/creature/commands/RegrantSkillsCommand.h"
+#include "server/zone/objects/creature/commands/FindStructuresCommand.h"
+
 #include "server/zone/objects/creature/commands/JediQueueCommand.h"
 
 #include "templates/datatables/DataTableIff.h"
@@ -328,6 +331,10 @@ void CommandConfigManager::registerSpecialCommands(CommandList* sCommands) {
 	if (slashCommand == NULL) {
 		error("Could not create command /logout");
 	}
+
+	//NPC Versions of buffed commands
+	createCommand(String("forceChokeNpc").toLowerCase())->setCommandGroup(0xe1c9a54a);
+	createCommand(String("torsoShotNpc").toLowerCase())->setCommandGroup(0xe1c9a54a);
 
 	createCommand(String("mildPoison").toLowerCase())->setCommandGroup(0xe1c9a54a);
 	createCommand(String("strongPoison").toLowerCase())->setCommandGroup(0xe1c9a54a);
@@ -852,5 +859,7 @@ void CommandConfigManager::registerCommands() {
 	commandFactory.registerCommand<PetPatrolCommand>(String("petPatrol").toLowerCase());
 	commandFactory.registerCommand<PetClearPatrolPointsCommand>(String("petClearPatrolPoints").toLowerCase());
 	commandFactory.registerCommand<PetGetPatrolPointCommand>(String("petGetPatrolPoint").toLowerCase());
+	commandFactory.registerCommand<RegrantSkillsCommand>(String("regrantSkills").toLowerCase());
+	commandFactory.registerCommand<FindStructuresCommand>(String("findStructures").toLowerCase());
 	commandFactory.registerCommand<AreaTauntCommand>(String("areataunt").toLowerCase());
 }
