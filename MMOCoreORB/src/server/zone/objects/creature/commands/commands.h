@@ -183,6 +183,7 @@
 #include "FindMyTrainerCommand.h"
 #include "FindObjectCommand.h"
 #include "FindPlayerCommand.h"
+#include "FindStructuresCommand.h"
 #include "FireAcidCone1Command.h"
 #include "FireAcidCone2Command.h"
 #include "FireAcidSingle1Command.h"

@@ -3065,7 +3065,6 @@ bool CreatureObjectImplementation::isAttackableBy(TangibleObject* object, bool b
 
 	// the other options are overt creature / overt tano  and covert/covert, covert tano, overt creature..  all are attackable
 	return true;
-
 }
 
 bool CreatureObjectImplementation::isAttackableBy(CreatureObject* object) {
