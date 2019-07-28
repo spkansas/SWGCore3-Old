@@ -128,7 +128,7 @@ void PlayerObjectImplementation::checkPendingMessages() {
     if (messageList != nullptr) {
         Locker locker(messageList);
         Vector<uint64>& pendingMessages = *messageList->getPendingMessages();
-        
+
         for (uint64 messageID : pendingMessages) {
             ManagedReference<PersistentMessage*> mail = Core::getObjectBroker()->lookUp(messageID).castTo<PersistentMessage*>();
 
@@ -163,9 +163,9 @@ void PlayerObjectImplementation::initializeAccount() {
 	if (account != nullptr && galaxyAccountInfo == nullptr) {
 
 		Locker locker(account);
-		
+
 		galaxyAccountInfo = account->getGalaxyAccountInfo(getZoneServer()->getGalaxyName());
-		
+
 		if (chosenVeteranRewards.size() > 0) {
 			//galaxyAccountInfo->updateVetRewardsFromPlayer(chosenVeteranRewards);
 			chosenVeteranRewards.removeAll();
@@ -316,7 +316,8 @@ void PlayerObjectImplementation::unload() {
 }
 
 int PlayerObjectImplementation::calculateBhReward() {
-	int minReward = 25000; // Minimum reward for a player bounty
+    int minReward = 75000; // Minimum reward for a player bounty
+	int maxReward = 1250000; // Maximum reward for a player bounty
 
 	if (getJediState() >= 4) // Minimum if player is knight
 		minReward = 50000;
