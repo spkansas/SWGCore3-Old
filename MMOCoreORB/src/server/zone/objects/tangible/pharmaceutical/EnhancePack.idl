@@ -6,13 +6,16 @@ package server.zone.objects.tangible.pharmaceutical;
 
 import server.zone.packets.scene.AttributeListMessage;
 import server.zone.objects.creature.CreatureObject;
+import server.zone.objects.player.PlayerObject;
 include system.lang.Math;
 import server.zone.objects.tangible.pharmaceutical.PharmaceuticalObject;
+include server.zone.objects.creature.buffs.Buff;
 include server.zone.objects.manufactureschematic.craftingvalues.CraftingValues;
 include templates.tangible.EnhancePackTemplate;
 include server.zone.objects.creature.BuffAttribute;
 include templates.SharedObjectTemplate;
 include system.lang.String;
+include system.util.Vector;
 
 @json
 class EnhancePack extends PharmaceuticalObject {
@@ -114,6 +117,26 @@ class EnhancePack extends PharmaceuticalObject {
 
 	@dirty
 	public native unsigned int calculatePower(CreatureObject healer, CreatureObject patient, boolean applyBattleFatigue = true);
+
+	@dirty
+	public native unsigned int calculatePower(CreatureObject healer);
+
+	/**
+	 * Enhances the target character with doc/ent buffs
+	 * @pre { player is locked }
+	 * @post { player is locked }
+	 */
+	public native void enhanceCharacter(CreatureObject player, int amount, int duration);
+
+	/**
+	 * Creates and adds buff to Player
+	 * @pre { player is locked }
+	 * @post { player is locked }
+	 * @returns true if it was added
+	 * @param crc CRC of the buff, player target of buff, amount is the attribute modifier for the buff, duration of the buff, buffType specifies whether medical or performance and attribute sets the creature attribute to modify
+	 */
+	private native boolean doEnhanceCharacter(unsigned int crc, CreatureObject player, int amount, int duration, int buffType, byte attribute);
+
 
 	@dirty
 	public float getEffectiveness() {
