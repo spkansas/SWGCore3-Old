@@ -68,8 +68,26 @@ class PlayerManager extends Observer implements Logger {
 	// Used for frog/gm buffs
 	protected int performanceBuff;
 	protected int medicalBuff;
+	protected int performanceBuff;
+
+        // Used for expensive Term buffs
+	protected int expensiveMedicalBuff;
+	protected int expensiveMedicalSubBuff;
+	protected int expensivePerformanceBuff;
+	protected int expensivePerformanceSubBuff;
+
+        // Used for cheap Term Buffs
+	protected int cheapMedicalBuff;
+	protected int cheapPerformanceBuff;
+
+        // Used for Duration for all buff types
 	protected int performanceDuration;
 	protected int medicalDuration;
+
+        // Used For Buff Costs
+	protected int expensiveMedicalBuffCost;
+	protected int expensivePerformanceBuffCost;
+	protected int cheapBuffCost;
 
 	protected int baseStoredCreaturePets;
 	protected int baseStoredFactionPets;

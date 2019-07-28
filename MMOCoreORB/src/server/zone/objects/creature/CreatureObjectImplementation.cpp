@@ -3907,3 +3907,13 @@ void CreatureObjectImplementation::setHue(int hueIndex) {
 
 	hueValue = hueIndex;
 }
+
+void CreatureObjectImplementation::subtractTotalCredits(int credits) {
+	Locker locker(creditObject);
+
+	const int newCredits = creditObject->getTotalCredits() - credits;
+	if (newCredits < 0)
+		return;
+
+	creditObject->subtractTotalCredits(credits, true);
+}

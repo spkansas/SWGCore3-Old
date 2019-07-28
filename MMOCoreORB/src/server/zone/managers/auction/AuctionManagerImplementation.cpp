@@ -472,11 +472,11 @@ void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 ob
 				costReduction = .60f;
 
 		if (item->isPremiumAuction()) {
-			player->subtractBankCredits(costReduction * (SALESFEE * 5));
+			player->subtractTotalCredits(costReduction * (SALESFEE * 5));
 			str.setDI(costReduction * (SALESFEE * 5));
 
 		} else {
-			player->subtractBankCredits(costReduction * SALESFEE);
+			player->subtractTotalCredits(costReduction * SALESFEE);
 			str.setDI(costReduction * SALESFEE);
 		}
 
@@ -585,10 +585,10 @@ int AuctionManagerImplementation::checkSaleItem(CreatureObject* player, SceneObj
 		if (price > MAXBAZAARPRICE)
 			return ItemSoldMessage::INVALIDSALEPRICE;
 
-		if (player->getBankCredits() < SALESFEE)
+		if (player->getTotalCredits() < SALESFEE)
 			return ItemSoldMessage::NOTENOUGHCREDITS;
 
-		if (premium && player->getBankCredits() < SALESFEE * 5)
+		if (premium && player->getTotalCredits() < SALESFEE * 5)
 			return ItemSoldMessage::NOTENOUGHCREDITS;
 
 	}
@@ -708,7 +708,7 @@ int AuctionManagerImplementation::checkBidAuction(CreatureObject* player, Auctio
 		return BidAuctionResponseMessage::INVALIDPRICE;
 	}
 
-	if (player->getBankCredits() < price1) { // Credit Check
+	if (player->getTotalCredits() < price1) { // Credit Check
 		return BidAuctionResponseMessage::NOTENOUGHCREDITS;
 	}
 
@@ -762,7 +762,7 @@ void AuctionManagerImplementation::doInstantBuy(CreatureObject* player, AuctionI
 	item->setBidderName(playername);
 	item->clearAuctionWithdraw();
 
-	player->subtractBankCredits(item->getPrice());
+	player->subtractTotalCredits(item->getPrice());
 
 	BaseMessage* msg = new BidAuctionResponseMessage(item->getAuctionedItemObjectID(), 0);
 	player->sendMessage(msg);
@@ -935,14 +935,14 @@ void AuctionManagerImplementation::doAuctionBid(CreatureObject* player, AuctionI
 		int fullPrice = proxyBid + increase - item->getPrice();
 
 		//TODO: prior didnt have enough money -> assert.. fix properly
-		if (priorBidder->getBankCredits() < fullPrice) {
+		if (priorBidder->getTotalCredits() < fullPrice) {
 			BaseMessage* msg = new BidAuctionResponseMessage(item->getAuctionedItemObjectID(), BidAuctionResponseMessage::NOTENOUGHCREDITS);
 			player->sendMessage(msg);
 
 			return;
 		}
 
-		priorBidder->subtractBankCredits(fullPrice);
+		priorBidder->subtractTotalCredits(fullPrice);
 		item->setPrice(proxyBid + increase);
 		BaseMessage* msg = new BidAuctionResponseMessage(item->getAuctionedItemObjectID(), BidAuctionResponseMessage::SUCCEDED);
 		player->sendMessage(msg);
@@ -959,8 +959,8 @@ void AuctionManagerImplementation::doAuctionBid(CreatureObject* player, AuctionI
 	Locker locker(item);
 	Locker plocker(player);
 
-	if (player->getBankCredits() < price1 ||
-			player->getBankCredits() < item->getPrice()) {
+	if (player->getTotalCredits() < price1 ||
+			player->getTotalCredits() < item->getPrice()) {
 		BaseMessage* msg = new BidAuctionResponseMessage(item->getAuctionedItemObjectID(), BidAuctionResponseMessage::NOTENOUGHCREDITS);
 		player->sendMessage(msg);
 
@@ -985,7 +985,7 @@ void AuctionManagerImplementation::doAuctionBid(CreatureObject* player, AuctionI
 		item->setBidderName(playername);
 
 		// take money from high bidder
-		player->subtractBankCredits(item->getPrice());
+		player->subtractTotalCredits(item->getPrice());
 
 		if (priorBidder != nullptr) {
 			Locker clocker(priorBidder, player);
@@ -1008,7 +1008,7 @@ void AuctionManagerImplementation::doAuctionBid(CreatureObject* player, AuctionI
 		item->setBuyerID(player->getObjectID());
 		item->setBidderName(playername);
 
-		player->subtractBankCredits(item->getPrice());
+		player->subtractTotalCredits(item->getPrice());
 	}
 
 	BaseMessage* msg = new BidAuctionResponseMessage(item->getAuctionedItemObjectID(), 0);

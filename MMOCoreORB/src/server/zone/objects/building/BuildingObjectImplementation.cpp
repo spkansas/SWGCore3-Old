@@ -1143,12 +1143,12 @@ void BuildingObjectImplementation::payAccessFee(CreatureObject* player) {
 		}
 	}
 
-	if (player->getCashCredits() < accessFee) {
+	if (player->getTotalCredits() < accessFee) {
 		player->sendSystemMessage("@player/player_utility:not_enough_money");
 		return;
 	}
 
-	player->subtractCashCredits(accessFee);
+	player->subtractTotalCredits(accessFee);
 
 	ManagedReference<CreatureObject*> owner = getOwnerCreatureObject();
 

@@ -1053,7 +1053,7 @@ void StructureManager::promptPayUncondemnMaintenance(CreatureObject* creature, S
 	ManagedReference<SuiMessageBox*> sui = NULL;
 	String text;
 
-	if (creature->getBankCredits() >= uncondemnCost) {
+	if (creature->getTotalCredits() >= uncondemnCost) {
 		//Owner can un-condemn the structure.
 		sui = new SuiMessageBox(creature, SuiWindowType::STRUCTURE_UNCONDEMN_CONFIRM);
 		if (sui == NULL) {
@@ -1099,7 +1099,7 @@ void StructureManager::promptPayUncondemnMaintenance(CreatureObject* creature, S
 }
 
 void StructureManager::promptPayMaintenance(StructureObject* structure, CreatureObject* creature, SceneObject* terminal) {
-	int availableCredits = creature->getCashCredits();
+	int availableCredits = creature->getTotalCredits();
 
 	if (availableCredits <= 0) {
 		creature->sendSystemMessage("@player_structure:no_money"); //You do not have any money to pay maintenance.
@@ -1269,7 +1269,7 @@ void StructureManager::payMaintenance(StructureObject* structure,
 		return;
 	}
 
-	int cash = creature->getCashCredits();
+	int cash = creature->getTotalCredits();
 
 	if (cash < amount) {
 		creature->sendSystemMessage("@player_structure:insufficient_funds"); //You have insufficient funds to make this deposit.
@@ -1282,7 +1282,7 @@ void StructureManager::payMaintenance(StructureObject* structure,
 
 	creature->sendSystemMessage(params);
 
-	creature->subtractCashCredits(amount);
+	creature->subtractTotalCredits(amount);
 	structure->addMaintenance(amount);
 
 	PlayerObject* ghost = creature->getPlayerObject();

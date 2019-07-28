@@ -214,7 +214,7 @@ void VehicleObjectImplementation::sendRepairConfirmTo(CreatureObject* player) {
 	listbox->setCancelButton(true, "@cancel");
 
 	int repairCost = calculateRepairCost(player);
-	int totalFunds = player->getBankCredits();
+	int totalFunds = player->getTotalCredits();
 	int tax = 0;
 
 	ManagedReference<CityRegion*> city = getCityRegion().get();
