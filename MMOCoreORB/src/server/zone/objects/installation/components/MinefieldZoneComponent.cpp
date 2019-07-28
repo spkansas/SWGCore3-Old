@@ -16,6 +16,9 @@
 #include "server/zone/objects/installation/components/TurretObserver.h"
 
 void MinefieldZoneComponent::notifyPositionUpdate(SceneObject* sceneObject, QuadTreeEntry* entry) const {
+	// if we don't have any mines, just exit
+	if(sceneObject->getContainerObjectsSize() == 0 )
+		return;
 
 	ManagedReference<SceneObject*> target = cast<SceneObject*>(entry);
 
