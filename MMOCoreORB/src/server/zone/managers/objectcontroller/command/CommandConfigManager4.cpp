@@ -180,12 +180,16 @@
 #include "server/zone/objects/creature/commands/InspacereloadCommand.h"
 #include "server/zone/objects/creature/commands/InspacerrCommand.h"
 #include "server/zone/objects/creature/commands/RequestSpaceTrainerCommand.h"
-
+#include "server/zone/objects/creature/commands/ForceChokeNpcCommand.h"
+#include "server/zone/objects/creature/commands/TorsoShotNpcCommand.h"
 
 using namespace server::zone::managers::objectcontroller::command;
 
 
 void CommandConfigManager::registerCommands4() {
+
+	commandFactory.registerCommand<TorsoShotNpcCommand>(String("torsoShotNpc").toLowerCase());
+	commandFactory.registerCommand<ForceChokeNpcCommand>(String("forceChokeNpc").toLowerCase());
 	commandFactory.registerCommand<SuppressionFire1Command>(String("suppressionFire1").toLowerCase());
 	commandFactory.registerCommand<SuppressionFire2Command>(String("suppressionFire2").toLowerCase());
 	commandFactory.registerCommand<SurpriseShotCommand>(String("surpriseShot").toLowerCase());
