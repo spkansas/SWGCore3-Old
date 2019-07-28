@@ -68,3 +68,14 @@ void CreditObjectImplementation::notifyLoadFromDatabase() {
 	if (bankCredits < 0)
 		bankCredits = 0;
 }
+
+void CreditObjectImplementation::subtractTotalCredits(int credits, bool notifyClient) {
+	if (cashCredits >= credits) {
+		subtractCashCredits(credits, notifyClient);
+		return;
+	}
+
+	const int creditsRemainder = credits - cashCredits;
+	subtractCashCredits(cashCredits, notifyClient);
+	subtractBankCredits(creditsRemainder, notifyClient);
+}

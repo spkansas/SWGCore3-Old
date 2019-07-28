@@ -83,4 +83,25 @@ class CreditObject extends ManagedObject {
 	public native WeakReference getOwner();
 
 	public native void setOwner(CreatureObject obj);
+
+	// Remastered
+	public int getTotalCredits() {
+		return cashCredits + bankCredits;
+	}
+
+	@preLocked
+	public native void subtractTotalCredits(int amount, boolean notifyClient = true);
+
+	@dirty
+	public boolean verifyTotalCredits(int amount) {
+		if (amount < 0) {
+			return false;
+		}
+
+		if (getTotalCredits() < amount) {
+			return false;
+		}
+
+		return true;
+	}
 }
