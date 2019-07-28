@@ -600,6 +600,12 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 
 	chatManager->sendMail("system", "@newbie_tutorial/newbie_mail:welcome_subject", "@newbie_tutorial/newbie_mail:welcome_body", playerCreature->getFirstName());
 
+	//Join General chat room
+	ghost->addChatRoom(chatManager->getGeneralRoom()->getRoomID());
+
+	//Join PVP chat room
+	ghost->addChatRoom(chatManager->getPvpRoom()->getRoomID());
+
 	//Join auction chat room
 	ghost->addChatRoom(chatManager->getAuctionRoom()->getRoomID());
 
@@ -619,8 +625,14 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 
 	//Broadcast Server wide message, new player has joined the server
 	StringBuffer zBroadcast;
-    	zBroadcast << "\\#00ace6" << playerName << " \\#ffb90f Has Joined MtG-Public-Server!";
+    	zBroadcast << "\\#00ace6" << playerName << " \\#ffb90f Has Joined SPKCore3-Server!";
 	playerCreature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+
+	ghost->addSuiBox(box);
+	playerCreature->sendMessage(box->generateMessage());
+	
+       // playerCreature->sendExecuteConsoleCommand("/chatRoom join SWG.SWGRemastered.General");
+       // playerCreature->sendExecuteConsoleCommand("/chatRoom join SWG.SWGRemastered.PvP");
 
 	return true;
 }
