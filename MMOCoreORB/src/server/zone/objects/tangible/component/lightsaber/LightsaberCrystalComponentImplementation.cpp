@@ -117,6 +117,30 @@ void LightsaberCrystalComponentImplementation::generateCrystalStats() {
 	quality = getCrystalQuality();
 }
 
+// This allows for any CombatLevel to be used moving forward. Even 99999!
+int LightsaberCrystalComponentImplementation::hardCapIntStatGeneration(int minVal, int maxVal, int givenValue){
+
+
+	int result = givenValue;
+
+	// Double check to make sure we aren't getting crazy numbers!
+	if (result > maxVal || result < minVal){
+		result = maxVal;
+	}
+
+	return result;
+}
+
+float LightsaberCrystalComponentImplementation::hardCapFloatStatGeneration(float minVal,float maxVal, float givenValue){
+	float result = givenValue;
+
+	if (result < maxVal || result > minVal){
+		result = maxVal;
+	}
+
+	return result;
+}
+
 void LightsaberCrystalComponentImplementation::validateCrystalStats() {
 	ManagedReference<LootManager*> lootManager = getZoneServer()->getLootManager();
 
