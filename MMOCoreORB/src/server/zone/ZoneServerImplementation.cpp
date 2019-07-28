@@ -50,8 +50,8 @@ ZoneServerImplementation::ZoneServerImplementation(ConfigManager* config) :
 	galaxyName = "Core3";
 
 	processor = NULL;
-	
-	
+
+
 	serverCap = 3000;
 
 	phandler = NULL;

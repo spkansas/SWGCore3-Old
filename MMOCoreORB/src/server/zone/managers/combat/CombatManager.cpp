@@ -892,6 +892,7 @@ float CombatManager::hitChanceEquation(float attackerAccuracy, float attackerRol
 
 	return accTotal;
 }
+
 int CombatManager::calculateDamageRange(TangibleObject* attacker, CreatureObject* defender, WeaponObject* weapon) {
 	int attackType = weapon->getAttackType();
 	int damageMitigation = 0;
@@ -989,8 +990,6 @@ int CombatManager::getSpeedModifier(CreatureObject* attacker, WeaponObject* weap
 
 	return speedMods;
 }
-
-
 
 int CombatManager::getArmorObjectReduction(ArmorObject* armor, int damageType) {
 	float resist = 0;
@@ -1763,6 +1762,7 @@ void CombatManager::showHitLocationFlyText(CreatureObject *attacker, CreatureObj
 	if(fly != nullptr)
 		attacker->sendMessage(fly);
 }
+
 void CombatManager::doDodge(TangibleObject* attacker, WeaponObject* weapon, CreatureObject* defender, int damage) {
 	defender->showFlyText("combat_effects", "dodge", 0, 0xFF, 0);
 
@@ -2600,7 +2600,6 @@ bool CombatManager::checkConeAngle(SceneObject* target, float angle,
 	return true;
 }
 
-
 Reference<SortedVector<ManagedReference<TangibleObject*> >* > CombatManager::getAreaTargets(TangibleObject* attacker, WeaponObject* weapon, TangibleObject* defenderObject, const CreatureAttackData& data) {
 	float creatureVectorX = attacker->getPositionX();
 	float creatureVectorY = attacker->getPositionY();
@@ -2898,8 +2897,10 @@ void CombatManager::initializeDefaultAttacks() {
 }
 
 void CombatManager::checkForTefs(CreatureObject* attacker, CreatureObject* defender, bool* shouldGcwTef, bool* shouldBhTef) {
+
 	if (*shouldGcwTef && *shouldBhTef)
 		return;
+
 
 	ManagedReference<CreatureObject*> attackingCreature = attacker->isPet() ? attacker->getLinkedCreature() : attacker;
 	ManagedReference<CreatureObject*> targetCreature = defender->isPet() || defender->isVehicleObject() ? defender->getLinkedCreature() : defender;
