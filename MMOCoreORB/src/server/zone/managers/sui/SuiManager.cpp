@@ -400,7 +400,11 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					return;
 				}
 
-			} else if (templatePath.beginsWith("crafting_apron_")) {
+			} 
+			else if (templatePath.beginsWith("crafting_apron_")) 
+			{
+				uint32 itemCrc;
+				
 				//"object/tangible/wearables/apron/apron_chef_s01.iff"
 				//"object/tangible/wearables/ithorian/apron_chef_jacket_s01_ith.iff"
 
@@ -409,8 +413,18 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					return;
 				}
 
-				uint32 itemCrc = ( player->getSpecies() != CreatureObject::ITHORIAN ) ? 0x5DDC4E5D : 0x6C191FBB;
-
+				switch (player->getSpecies())
+				{
+					case CreatureObject::ITHORIAN:
+						itemCrc	= 0x6C191FBB;
+						break;
+					case CreatureObject::CHISS:
+						itemCrc	= 0xCCBD31D8;
+						break;
+					default;
+						itemCrc	= 0x5DDC4E5D;
+				}
+			
 				ManagedReference<WearableObject*> apron = zserv->createObject(itemCrc, 2).castTo<WearableObject*>();
 
 				if (apron == NULL) {
