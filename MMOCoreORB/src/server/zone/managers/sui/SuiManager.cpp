@@ -421,7 +421,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					case CreatureObject::CHISS:
 						itemCrc	= 0xCCBD31D8;
 						break;
-					default;
+					default:
 						itemCrc	= 0x5DDC4E5D;
 				}
 			
