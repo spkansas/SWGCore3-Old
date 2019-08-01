@@ -1551,7 +1551,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 			"Attachments",
 			{
 				"Armor Attachment", "object/tangible/gem/armor.iff",
-				"Clothing Attachment", "object/tangible/gem/clothing.iff",
+				"Clothing Attachment", "object/tangible/gem/clothing.iff"
 			},
 			"Armor",
 			{
@@ -1647,7 +1647,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					"Doctor", "crafting_apron_doctor",
 					"Droid Engineer", "crafting_apron_droid_engineer",
 					"Tailor", "crafting_apron_tailor",
-					"Weaponsmith", "crafting_apron_weaponsmith",
+					"Weaponsmith", "crafting_apron_weaponsmith"
 				},
 				"Backpacks",
 				{
@@ -1689,7 +1689,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 				"Tranna Nougat Cream", "object/tangible/food/crafted/dessert_tranna_nougat_cream.iff",
 				"Vagnerian Canape", "object/tangible/food/crafted/dessert_vagnerian_canape.iff",
 				"Wedding Cake", "object/tangible/food/crafted/dessert_wedding_cake.iff",
-				"Won Won", "object/tangible/food/crafted/dessert_won_won.iff",
+				"Won Won", "object/tangible/food/crafted/dessert_won_won.iff"
 				},
 				"Dishes",
 				{
@@ -1825,7 +1825,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 				{
 					"Swoop", "object/tangible/deed/vehicle_deed/speederbike_swoop_deed.iff",
 					--"Jetpack", "object/tangible/deed/vehicle_deed/jetpack_deed.iff",
-					"Speederbike", "object/tangible/deed/vehicle_deed/speederbike_deed.iff",
+					"Speederbike", "object/tangible/deed/vehicle_deed/speederbike_deed.iff"
 				--"Speederbike Flash", "object/tangible/deed/vehicle_deed/speederbike_flash_deed.iff",
 				--"Landspeeder av21", "object/tangible/deed/vehicle_deed/landspeeder_av21_deed.iff",
 				--"Landspeeder x31", "object/tangible/deed/vehicle_deed/landspeeder_x31_deed.iff",
@@ -2151,7 +2151,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					"Rental: Web Filled Tree", "object/tangible/deed/event_perk/web_tree.iff",
 					--"Rental: Wrecked Sandcrawler", "object/tangible/deed/event_perk/wrecked_sandcrawler_deed.iff",
 					"Rental: X-Wing", "object/tangible/deed/event_perk/xwing_static_deed.iff",
-				},
+				}
 			},
 			"Droids",
 			{
@@ -2255,7 +2255,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 				"Painting: Hutt Greed","object/tangible/veteran_reward/one_year_anniversary/painting_06.iff",
 				"Painting: Smuggler's Run","object/tangible/veteran_reward/one_year_anniversary/painting_07.iff",
 				"Painting: Imperial Oppression (TIE Oppressor)","object/tangible/veteran_reward/one_year_anniversary/painting_08.iff",
-				"Painting: Emperor's Eyes (TIE Sentinel)","object/tangible/veteran_reward/one_year_anniversary/painting_09.iff",
+				"Painting: Emperor's Eyes (TIE Sentinel)","object/tangible/veteran_reward/one_year_anniversary/painting_09.iff"
 			},
 			"Furniture",
 			{
@@ -2386,8 +2386,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					"Table-top Lamp (Naboo)", "object/tangible/furniture/all/frn_all_lamp_table_s03.iff",
 					"Table-top Lamp (Naboo) Lit", "object/tangible/furniture/all/frn_all_lamp_tbl_s03_lit.iff",
 					"Table-top Lamp (Coruscant)", "object/tangible/furniture/all/frn_all_lamp_tatt_s01.iff",
-					"Table-top Lamp(Coruscant) Lit", "object/tangible/furniture/all/frn_all_lamp_tatt_s01_lit.iff",
-
+					"Table-top Lamp(Coruscant) Lit", "object/tangible/furniture/all/frn_all_lamp_tatt_s01_lit.iff"
 				},
 				"Trophies",
 				{
@@ -2417,7 +2416,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					"Fine Woven Rug (Style 3)", "object/tangible/furniture/all/frn_all_rug_rectangle_large_style_03.iff",
 					"Fine Woven Rug (Style 4)", "object/tangible/furniture/all/frn_all_rug_rectangle_large_style_04.iff",
 					"Fine Woven Rug (Style 5)", "object/tangible/furniture/all/frn_all_rug_rectangle_large_style_05.iff",
-					"Tatooine Tapestry","object/tangible/furniture/decorative/tatooine_tapestry.iff",
+					"Tatooine Tapestry","object/tangible/furniture/decorative/tatooine_tapestry.iff"
 				-- The following do not generate an item, but are in the TRE files.
 				--"Bestine Rug","object/tangible/furniture/modern/bestine_quest_rug",
 				--"Large Oval Rug (Style 3)","object/tangible/furniture/modern/rug_oval_lg_s01",
@@ -2591,7 +2590,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					"Dark Table (Style 2)", "object/tangible/furniture/jedi/frn_all_table_dark_02.iff",
 					"Light Table (Style 1)", "object/tangible/furniture/jedi/frn_all_table_light_01.iff",
 					"Light Table (Style 2)", "object/tangible/furniture/jedi/frn_all_table_light_02.iff",
-					"Jedi Council Seat", "object/tangible/furniture/all/frn_all_jedi_council_seat.iff",
+					"Jedi Council Seat", "object/tangible/furniture/all/frn_all_jedi_council_seat.iff"
 				},
 				"City Decorations",
 				{
@@ -2624,7 +2623,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					"Street Lamp (Style 1) Red", "object/tangible/furniture/city/streetlamp_large_red_02.iff",
 					"Street Lamp (Style 3) Red", "object/tangible/furniture/city/streetlamp_med_red_01.iff",
 					"Street Lamp (Style 4) Red", "object/tangible/furniture/city/streetlamp_med_red_02.iff"
-				},
+				}
 			},
 			"Intruments",
 			{
@@ -2769,7 +2768,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					--		"Lithitanium Carbine", "object/weapon/ranged/carbine/carbine_e11_victor_quest.iff",
 					--		"EE3 Carbine", "object/weapon/ranged/carbine/carbine_ee3.iff",
 					--		"Elite Carbine", "object/weapon/ranged/carbine/carbine_elite.iff",
-					"Laser Carbine", "object/weapon/ranged/carbine/carbine_laser.iff",
+					"Laser Carbine", "object/weapon/ranged/carbine/carbine_laser.iff"
 				--		"Nym's Slug-thrower Carbine", "object/weapon/ranged/carbine/carbine_nym_slugthrower.iff"
 				},
 				"Heavy",
@@ -2780,7 +2779,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					--		"Heavy Acid Rifle", "object/weapon/ranged/rifle/rifle_acid_beam.iff",
 					--		"Heavy Particle Beam Cannon", "object/weapon/ranged/heavy/heavy_particle_beam.iff",
 					--		"Lightning Beam Cannon", "object/weapon/ranged/heavy/heavy_lightning_beam.iff",
-					"Light Lightning Cannon", "object/weapon/ranged/rifle/rifle_lightning.iff",
+					"Light Lightning Cannon", "object/weapon/ranged/rifle/rifle_lightning.iff"
 				--		"Rocket Launcher", "object/weapon/ranged/heavy/heavy_rocket_launcher.iff"
 				},
 				"One-handed",
@@ -2801,7 +2800,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					--		"Vibroblade", "object/weapon/melee/knife/knife_vibroblade.iff",
 					--		"Jagged Vibroblade", "object/weapon/melee/knife/knife_vibroblade_quest.iff",
 					"Stun Baton", "object/weapon/melee/baton/baton_stun.iff",
-					"Gaderiffi Baton", "object/weapon/melee/baton/baton_gaderiffi.iff",
+					"Gaderiffi Baton", "object/weapon/melee/baton/baton_gaderiffi.iff"
 				--		"Black Metal Gaderiffi Baton", "object/weapon/melee/baton/victor_baton_gaderiffi.iff"
 				},
 				"Pistols",
@@ -2822,7 +2821,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					--		"Power5 Pistol", "object/weapon/ranged/pistol/pistol_power5.iff",
 					"Republic Blaster", "object/weapon/ranged/pistol/pistol_republic_blaster.iff",
 					--		"Modified Republic Blaster", "object/weapon/ranged/pistol/pistol_republic_blaster_quest.iff",
-					"Scatter Pistol", "object/weapon/ranged/pistol/pistol_scatter.iff",
+					"Scatter Pistol", "object/weapon/ranged/pistol/pistol_scatter.iff"
 				--		"Scout Blaster", "object/weapon/ranged/pistol/pistol_scout_blaster.iff",
 				--		"SR Combat Pistol", "object/weapon/ranged/pistol/pistol_srcombat.iff",
 				--		"Striker Pistol", "object/weapon/ranged/pistol/pistol_striker.iff",
@@ -2837,7 +2836,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					--		"Janta Staff", "object/weapon/melee/polearm/lance_staff_janta.iff",
 					--		"Metal Staff", "object/weapon/melee/polearm/lance_staff_metal.iff",
 					"Vibro Lance", "object/weapon/melee/polearm/lance_vibrolance.iff",
-					"Long Vibro Axe", "object/weapon/melee/polearm/polearm_vibro_axe.iff",
+					"Long Vibro Axe", "object/weapon/melee/polearm/polearm_vibro_axe.iff"
 				--		"Wood Staff", "object/weapon/melee/polearm/lance_staff_wood_s1.iff",
 				--		"Reinforced Combat Staff", "object/weapon/melee/polearm/lance_staff_wood_s2.iff",
 				},
@@ -2857,7 +2856,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					--		"SG82 Rifle", "object/weapon/ranged/rifle/rifle_sg82.iff",
 					--		"Spraystick", "object/weapon/ranged/rifle/rifle_spraystick.iff",
 					--		"Tenloss DXR-6 Disruptor Rifle", "object/weapon/ranged/rifle/rifle_tenloss_dxr6_disruptor_loot.iff",
-					"T21", "object/weapon/ranged/rifle/rifle_t21.iff",
+					"T21", "object/weapon/ranged/rifle/rifle_t21.iff"
 				--		"Tusken Rifle", "object/weapon/ranged/rifle/rifle_tusken.iff"
 				},
 				"Two-handed",
@@ -2865,7 +2864,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					"Two-handed Curved Sword", "object/weapon/melee/2h_sword/2h_sword_katana.iff",
 					--		"Grooved Two-handed Sword", "object/weapon/melee/2h_sword/2h_sword_katana_quest.iff",
 					--		"Scythe Blade", "object/weapon/melee/2h_sword/2h_sword_scythe.iff",
-					"Power Hammer", "object/weapon/melee/2h_sword/2h_sword_maul.iff",
+					"Power Hammer", "object/weapon/melee/2h_sword/2h_sword_maul.iff"
 				--		"Two-handed Cleaver", "object/weapon/melee/2h_sword/2h_sword_cleaver.iff",
 				--		"Black Sun Executioner's Hack", "object/weapon/melee/2h_sword/2h_sword_blacksun_hack.iff",
 				--		"Gamorrean Battleaxe", "object/weapon/melee/2h_sword/2h_sword_battleaxe_quest.iff",
@@ -2874,7 +2873,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 				},
 				"Unarmed",
 				{
-					"Vibro Knuckler", "object/weapon/melee/special/vibroknuckler.iff",
+					"Vibro Knuckler", "object/weapon/melee/special/vibroknuckler.iff"
 				--		"A Blacksun Razor Knuckler", "object/weapon/melee/special/blacksun_razor.iff"
 				}
 			},
@@ -2903,7 +2902,7 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 					"Tracking Device Case - First Section", "object/tangible/loot/collectible/collectible_parts/fs_tracking_device_case_01.iff",
 					"Tracking Device Case - Second Section", "object/tangible/loot/collectible/collectible_parts/fs_tracking_device_case_02.iff",
 					"Tracking Device Case - Third Section", "object/tangible/loot/collectible/collectible_parts/fs_tracking_device_case_03.iff",
-				},
+				}
 			}
 		}
 	}
