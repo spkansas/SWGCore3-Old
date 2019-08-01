@@ -508,8 +508,8 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				bluefrog->enhanceCharacter(player);
 
 			} else if (templatePath == "credits") {
-				player->addCashCredits(50000, true);
-				player->sendSystemMessage("You have received 50.000 Credits");
+				player->addCashCredits(100000, true);
+				player->sendSystemMessage("You have received 100.000 Credits");
 
 			} else if (templatePath == "faction_rebel") {
 				ghost->increaseFactionStanding("rebel", 100000);
