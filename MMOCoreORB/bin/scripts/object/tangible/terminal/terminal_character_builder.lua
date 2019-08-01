@@ -1,4 +1,4 @@
---Copyright (C) 2010 <SWGEmu>
+ --Copyright (C) 2010 <SWGEmu>
 
 
 --This File is part of Core3.
@@ -602,8 +602,6 @@ object_tangible_terminal_terminal_character_builder = object_tangible_terminal_s
 				},
 				"Force Sensitive",
 				{
-					"Crafting Mastery",
-					{
 					"Novice", "force_sensitive_crafting_mastery_novice",
 					"Experimentation",
 					{
