@@ -52,26 +52,26 @@ Core3 = {
 	ORB = "",
 	ORBPort = 44419,
 
-	DBHost = "127.0.0.1",
+	DBHost = "192.168.1.75",
 	DBPort = 3306,
 	DBName = "swgemu",
 	DBUser = "swgemu",
-	DBPass = "123456",
-	DBSecret = "swgemus3cr37!", -- Change this! This value should be unique and of reasonable length.
+	DBPass = "swgemu",
+	DBSecret = "s2wg3434u53cr37!", -- Change this! This value should be unique and of reasonable length.
 
 	LoginPort = 44453,
 	LoginProcessingThreads = 1,
 	LoginAllowedConnections = 3000,
 	LoginRequiredVersion = "20050408-18:00",
 
-	MantisHost = "127.0.0.1",
+	MantisHost = "192.168.1.75",
 	MantisPort = 3306,
 	MantisName = "swgemu",
 	MantisUser = "swgemu",
-	MantisPass = "123456",
+	MantisPass = "swgemu",
 	MantisPrfx = "mantis_", -- The prefix for your mantis tables.
 
-	MetricsHost = "localhost",
+	MetricsHost = "192.168.1.91",
 	MetricsPort = 8125,
 	MetricsPrefix = "",
 
@@ -149,11 +149,13 @@ Core3 = {
 	TrePath = "/home/swgemu/workspace/tre",
 
 	TreFiles = {
+		-- "terminal_fix.tre",
+		"SPKCore3_00.tre",
 		"mtg_patch_023.tre",
 		"mtg_patch_022.tre",
 		"mtg_planets.tre",
 		"mtg_patch_021.tre",
-		--"mtg_patch_020.tre",
+		-- "mtg_patch_020.tre",
 		"mtg_patch_019.tre",
 		"mtg_patch_018.tre",
 		"mtg_patch_017.tre",
